@@ -30,11 +30,20 @@
         {
             TopMenuPanel = new Panel();
             MainPanel = new Panel();
+            BtnLogin = new Button();
+            BtnUserManeger = new Button();
+            BtnProduct = new Button();
+            button4 = new Button();
+            TopMenuPanel.SuspendLayout();
             SuspendLayout();
             // 
             // TopMenuPanel
             // 
             TopMenuPanel.BorderStyle = BorderStyle.FixedSingle;
+            TopMenuPanel.Controls.Add(button4);
+            TopMenuPanel.Controls.Add(BtnProduct);
+            TopMenuPanel.Controls.Add(BtnUserManeger);
+            TopMenuPanel.Controls.Add(BtnLogin);
             TopMenuPanel.Location = new Point(3, 0);
             TopMenuPanel.Name = "TopMenuPanel";
             TopMenuPanel.Size = new Size(778, 58);
@@ -47,6 +56,42 @@
             MainPanel.Size = new Size(778, 393);
             MainPanel.TabIndex = 1;
             // 
+            // BtnLogin
+            // 
+            BtnLogin.Location = new Point(8, 3);
+            BtnLogin.Name = "BtnLogin";
+            BtnLogin.Size = new Size(90, 50);
+            BtnLogin.TabIndex = 0;
+            BtnLogin.Text = "LOGIN";
+            BtnLogin.UseVisualStyleBackColor = true;
+            // 
+            // BtnUserManeger
+            // 
+            BtnUserManeger.Location = new Point(104, 3);
+            BtnUserManeger.Name = "BtnUserManeger";
+            BtnUserManeger.Size = new Size(90, 50);
+            BtnUserManeger.TabIndex = 1;
+            BtnUserManeger.Text = "USER";
+            BtnUserManeger.UseVisualStyleBackColor = true;
+            // 
+            // BtnProduct
+            // 
+            BtnProduct.Location = new Point(200, 3);
+            BtnProduct.Name = "BtnProduct";
+            BtnProduct.Size = new Size(90, 50);
+            BtnProduct.TabIndex = 2;
+            BtnProduct.Text = "PRODUCT";
+            BtnProduct.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(296, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(90, 50);
+            button4.TabIndex = 3;
+            button4.Text = "STATUS";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -56,6 +101,7 @@
             Controls.Add(TopMenuPanel);
             Name = "MainForm";
             Text = "MainForm";
+            TopMenuPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -63,5 +109,9 @@
 
         private Panel TopMenuPanel;
         private Panel MainPanel;
+        private Button button4;
+        private Button BtnProduct;
+        private Button BtnUserManeger;
+        private Button BtnLogin;
     }
 }
