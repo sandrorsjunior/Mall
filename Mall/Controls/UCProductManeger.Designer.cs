@@ -28,10 +28,231 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            listView1 = new ListView();
+            InputProduct = new TextBox();
+            InputDescription = new TextBox();
+            InputValue = new TextBox();
+            Name = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            BtnAdd = new Button();
+            label5 = new Label();
+            InputRemove = new TextBox();
+            BtnRemove = new Button();
+            BtnClear = new Button();
+            BtnSend = new Button();
+            InputQuantite = new NumericUpDown();
+            Id = new ColumnHeader();
+            Description = new ColumnHeader();
+            ProductName = new ColumnHeader();
+            ProductValue = new ColumnHeader();
+            Quantite = new ColumnHeader();
+            ((System.ComponentModel.ISupportInitialize)InputQuantite).BeginInit();
+            SuspendLayout();
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { Id, Description, ProductName, ProductValue, Quantite });
+            listView1.GridLines = true;
+            listView1.Location = new Point(27, 14);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(732, 187);
+            listView1.TabIndex = 0;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // InputProduct
+            // 
+            InputProduct.Location = new Point(159, 206);
+            InputProduct.Name = "InputProduct";
+            InputProduct.Size = new Size(211, 23);
+            InputProduct.TabIndex = 1;
+            InputProduct.TextChanged += textBox1_TextChanged;
+            // 
+            // InputDescription
+            // 
+            InputDescription.Location = new Point(159, 235);
+            InputDescription.Multiline = true;
+            InputDescription.Name = "InputDescription";
+            InputDescription.Size = new Size(211, 71);
+            InputDescription.TabIndex = 2;
+            // 
+            // InputValue
+            // 
+            InputValue.Location = new Point(159, 312);
+            InputValue.Name = "InputValue";
+            InputValue.Size = new Size(211, 23);
+            InputValue.TabIndex = 3;
+            // 
+            // Name
+            // 
+            Name.AutoSize = true;
+            Name.Location = new Point(104, 209);
+            Name.Name = "Name";
+            Name.Size = new Size(49, 15);
+            Name.TabIndex = 5;
+            Name.Text = "Product";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(91, 247);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Decription";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(115, 315);
+            label3.Name = "label3";
+            label3.Size = new Size(35, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Value";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(100, 348);
+            label4.Name = "label4";
+            label4.Size = new Size(53, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Quantite";
+            // 
+            // BtnAdd
+            // 
+            BtnAdd.Location = new Point(471, 247);
+            BtnAdd.Name = "BtnAdd";
+            BtnAdd.Size = new Size(204, 23);
+            BtnAdd.TabIndex = 9;
+            BtnAdd.Text = "Add";
+            BtnAdd.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(486, 209);
+            label5.Name = "label5";
+            label5.Size = new Size(18, 15);
+            label5.TabIndex = 10;
+            label5.Text = "ID";
+            label5.Click += label5_Click;
+            // 
+            // InputRemove
+            // 
+            InputRemove.Location = new Point(510, 206);
+            InputRemove.Name = "InputRemove";
+            InputRemove.Size = new Size(100, 23);
+            InputRemove.TabIndex = 11;
+            // 
+            // BtnRemove
+            // 
+            BtnRemove.Location = new Point(616, 205);
+            BtnRemove.Name = "BtnRemove";
+            BtnRemove.Size = new Size(59, 23);
+            BtnRemove.TabIndex = 12;
+            BtnRemove.Text = "Remove";
+            BtnRemove.UseVisualStyleBackColor = true;
+            // 
+            // BtnClear
+            // 
+            BtnClear.Location = new Point(471, 307);
+            BtnClear.Name = "BtnClear";
+            BtnClear.Size = new Size(209, 23);
+            BtnClear.TabIndex = 13;
+            BtnClear.Text = "Clear";
+            BtnClear.UseVisualStyleBackColor = true;
+            // 
+            // BtnSend
+            // 
+            BtnSend.Location = new Point(471, 344);
+            BtnSend.Name = "BtnSend";
+            BtnSend.Size = new Size(209, 23);
+            BtnSend.TabIndex = 14;
+            BtnSend.Text = "Send";
+            BtnSend.UseVisualStyleBackColor = true;
+            // 
+            // InputQuantite
+            // 
+            InputQuantite.Location = new Point(159, 346);
+            InputQuantite.Name = "InputQuantite";
+            InputQuantite.Size = new Size(211, 23);
+            InputQuantite.TabIndex = 15;
+            // 
+            // Id
+            // 
+            Id.Text = "ID";
+            // 
+            // Description
+            // 
+            Description.Text = "DESCRIPTION";
+            Description.Width = 250;
+            // 
+            // ProductName
+            // 
+            ProductName.Text = "PRODUCT";
+            ProductName.Width = 180;
+            // 
+            // ProductValue
+            // 
+            ProductValue.Text = "VALUE";
+            ProductValue.Width = 120;
+            // 
+            // Quantite
+            // 
+            Quantite.Text = "QUANTITE";
+            Quantite.Width = 100;
+            // 
+            // UCProductManeger
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(InputQuantite);
+            Controls.Add(BtnSend);
+            Controls.Add(BtnClear);
+            Controls.Add(BtnRemove);
+            Controls.Add(InputRemove);
+            Controls.Add(label5);
+            Controls.Add(BtnAdd);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(Name);
+            Controls.Add(InputValue);
+            Controls.Add(InputDescription);
+            Controls.Add(InputProduct);
+            Controls.Add(listView1);
+            Name = "UCProductManeger";
+            Size = new Size(778, 393);
+            Load += UCProductManeger_Load;
+            ((System.ComponentModel.ISupportInitialize)InputQuantite).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private ListView listView1;
+        private TextBox InputProduct;
+        private TextBox InputDescription;
+        private TextBox InputValue;
+        private Label Name;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Button BtnAdd;
+        private Label label5;
+        private TextBox InputRemove;
+        private Button BtnRemove;
+        private Button BtnClear;
+        private Button BtnSend;
+        private NumericUpDown InputQuantite;
+        private ColumnHeader Id;
+        private ColumnHeader Description;
+        private ColumnHeader ProductName;
+        private ColumnHeader ProductValue;
+        private ColumnHeader Quantite;
     }
 }

@@ -21,5 +21,10 @@ namespace Mall.Controls
         {
 
         }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

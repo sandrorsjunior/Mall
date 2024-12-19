@@ -30,7 +30,7 @@
         {
             LWUser = new ListView();
             Id = new ColumnHeader();
-            Name = new ColumnHeader();
+            UserName = new ColumnHeader();
             Email = new ColumnHeader();
             Birthday = new ColumnHeader();
             Role = new ColumnHeader();
@@ -52,7 +52,7 @@
             // 
             // LWUser
             // 
-            LWUser.Columns.AddRange(new ColumnHeader[] { Id, Name, Email, Birthday, Role });
+            LWUser.Columns.AddRange(new ColumnHeader[] { Id, UserName, Email, Birthday, Role });
             LWUser.GridLines = true;
             LWUser.Location = new Point(18, 13);
             LWUser.Name = "LWUser";
@@ -65,10 +65,10 @@
             // 
             Id.Text = "ID";
             // 
-            // Name
+            // UserName
             // 
-            Name.Text = "NAME";
-            Name.Width = 200;
+            UserName.Text = "NAME";
+            UserName.Width = 200;
             // 
             // Email
             // 
@@ -166,6 +166,7 @@
             BtnRemove.TabIndex = 10;
             BtnRemove.Text = "Remove";
             BtnRemove.UseVisualStyleBackColor = true;
+            BtnRemove.Click += BtnRemove_Click;
             // 
             // label5
             // 
@@ -231,7 +232,7 @@
 
         private ListView LWUser;
         private ColumnHeader Id;
-        private ColumnHeader Name;
+        private ColumnHeader UserName;
         private ColumnHeader Email;
         private ColumnHeader Birthday;
         private ColumnHeader Role;
