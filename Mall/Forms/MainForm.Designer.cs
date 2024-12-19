@@ -33,14 +33,14 @@
             BtnLogin = new Button();
             BtnUserManeger = new Button();
             BtnProduct = new Button();
-            button4 = new Button();
+            BtnStatus = new Button();
             TopMenuPanel.SuspendLayout();
             SuspendLayout();
             // 
             // TopMenuPanel
             // 
             TopMenuPanel.BorderStyle = BorderStyle.FixedSingle;
-            TopMenuPanel.Controls.Add(button4);
+            TopMenuPanel.Controls.Add(BtnStatus);
             TopMenuPanel.Controls.Add(BtnProduct);
             TopMenuPanel.Controls.Add(BtnUserManeger);
             TopMenuPanel.Controls.Add(BtnLogin);
@@ -83,14 +83,14 @@
             BtnProduct.Text = "PRODUCT";
             BtnProduct.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BtnStatus
             // 
-            button4.Location = new Point(296, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(90, 50);
-            button4.TabIndex = 3;
-            button4.Text = "STATUS";
-            button4.UseVisualStyleBackColor = true;
+            BtnStatus.Location = new Point(296, 3);
+            BtnStatus.Name = "BtnStatus";
+            BtnStatus.Size = new Size(90, 50);
+            BtnStatus.TabIndex = 3;
+            BtnStatus.Text = "STATUS";
+            BtnStatus.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -109,7 +109,7 @@
 
         private Panel TopMenuPanel;
         private Panel MainPanel;
-        private Button button4;
+        private Button BtnStatus;
         private Button BtnProduct;
         private Button BtnUserManeger;
         private Button BtnLogin;
