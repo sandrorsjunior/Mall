@@ -28,10 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            InputPassWord = new TextBox();
+            InputUser = new TextBox();
+            BtnEnter = new Button();
+            linkLabel1 = new LinkLabel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // InputPassWord
+            // 
+            InputPassWord.Location = new Point(211, 220);
+            InputPassWord.Name = "InputPassWord";
+            InputPassWord.PlaceholderText = "Insert The Pass Word";
+            InputPassWord.Size = new Size(330, 23);
+            InputPassWord.TabIndex = 0;
+            // 
+            // InputUser
+            // 
+            InputUser.Location = new Point(211, 172);
+            InputUser.Name = "InputUser";
+            InputUser.PlaceholderText = "Insert The User Name";
+            InputUser.Size = new Size(330, 23);
+            InputUser.TabIndex = 1;
+            // 
+            // BtnEnter
+            // 
+            BtnEnter.Location = new Point(300, 292);
+            BtnEnter.Name = "BtnEnter";
+            BtnEnter.Size = new Size(147, 33);
+            BtnEnter.TabIndex = 2;
+            BtnEnter.Text = "Enter";
+            BtnEnter.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(343, 262);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(60, 15);
+            linkLabel1.TabIndex = 3;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "linkLabel1";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.brand;
+            pictureBox1.Location = new Point(318, 42);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(115, 103);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // UCLogin
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pictureBox1);
+            Controls.Add(linkLabel1);
+            Controls.Add(BtnEnter);
+            Controls.Add(InputUser);
+            Controls.Add(InputPassWord);
+            Name = "UCLogin";
+            Size = new Size(778, 393);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox InputPassWord;
+        private TextBox InputUser;
+        private Button BtnEnter;
+        private LinkLabel linkLabel1;
+        private PictureBox pictureBox1;
     }
 }
