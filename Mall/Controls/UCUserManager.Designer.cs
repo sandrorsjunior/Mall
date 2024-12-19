@@ -60,6 +60,7 @@
             LWUser.TabIndex = 0;
             LWUser.UseCompatibleStateImageBehavior = false;
             LWUser.View = View.Details;
+            LWUser.SelectedIndexChanged += LWUser_SelectedIndexChanged;
             // 
             // Id
             // 

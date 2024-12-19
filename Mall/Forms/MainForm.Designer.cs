@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             TopMenuPanel = new Panel();
-            MainPanel = new Panel();
-            BtnLogin = new Button();
-            BtnUserManeger = new Button();
-            BtnProduct = new Button();
             BtnStatus = new Button();
+            BtnProduct = new Button();
+            BtnUserManeger = new Button();
+            BtnLogin = new Button();
+            MainPanel = new Panel();
             TopMenuPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,30 +49,15 @@
             TopMenuPanel.Size = new Size(778, 58);
             TopMenuPanel.TabIndex = 0;
             // 
-            // MainPanel
+            // BtnStatus
             // 
-            MainPanel.Location = new Point(3, 64);
-            MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(778, 393);
-            MainPanel.TabIndex = 1;
-            // 
-            // BtnLogin
-            // 
-            BtnLogin.Location = new Point(8, 3);
-            BtnLogin.Name = "BtnLogin";
-            BtnLogin.Size = new Size(90, 50);
-            BtnLogin.TabIndex = 0;
-            BtnLogin.Text = "LOGIN";
-            BtnLogin.UseVisualStyleBackColor = true;
-            // 
-            // BtnUserManeger
-            // 
-            BtnUserManeger.Location = new Point(104, 3);
-            BtnUserManeger.Name = "BtnUserManeger";
-            BtnUserManeger.Size = new Size(90, 50);
-            BtnUserManeger.TabIndex = 1;
-            BtnUserManeger.Text = "USER";
-            BtnUserManeger.UseVisualStyleBackColor = true;
+            BtnStatus.Location = new Point(296, 3);
+            BtnStatus.Name = "BtnStatus";
+            BtnStatus.Size = new Size(90, 50);
+            BtnStatus.TabIndex = 3;
+            BtnStatus.Text = "STATUS";
+            BtnStatus.UseVisualStyleBackColor = true;
+            BtnStatus.Click += BtnStatus_Click;
             // 
             // BtnProduct
             // 
@@ -82,15 +67,34 @@
             BtnProduct.TabIndex = 2;
             BtnProduct.Text = "PRODUCT";
             BtnProduct.UseVisualStyleBackColor = true;
+            BtnProduct.Click += BtnProduct_Click;
             // 
-            // BtnStatus
+            // BtnUserManeger
             // 
-            BtnStatus.Location = new Point(296, 3);
-            BtnStatus.Name = "BtnStatus";
-            BtnStatus.Size = new Size(90, 50);
-            BtnStatus.TabIndex = 3;
-            BtnStatus.Text = "STATUS";
-            BtnStatus.UseVisualStyleBackColor = true;
+            BtnUserManeger.Location = new Point(104, 3);
+            BtnUserManeger.Name = "BtnUserManeger";
+            BtnUserManeger.Size = new Size(90, 50);
+            BtnUserManeger.TabIndex = 1;
+            BtnUserManeger.Text = "USER";
+            BtnUserManeger.UseVisualStyleBackColor = true;
+            BtnUserManeger.Click += BtnUserManeger_Click;
+            // 
+            // BtnLogin
+            // 
+            BtnLogin.Location = new Point(8, 3);
+            BtnLogin.Name = "BtnLogin";
+            BtnLogin.Size = new Size(90, 50);
+            BtnLogin.TabIndex = 0;
+            BtnLogin.Text = "LOGIN";
+            BtnLogin.UseVisualStyleBackColor = true;
+            BtnLogin.Click += BtnLogin_Click;
+            // 
+            // MainPanel
+            // 
+            MainPanel.Location = new Point(3, 64);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new Size(778, 393);
+            MainPanel.TabIndex = 1;
             // 
             // MainForm
             // 

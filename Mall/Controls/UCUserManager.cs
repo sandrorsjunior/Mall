@@ -26,5 +26,10 @@ namespace Mall.Controls
         {
 
         }
+
+        private void LWUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

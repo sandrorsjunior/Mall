@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
+            Id = new ColumnHeader();
+            Description = new ColumnHeader();
+            ProductName = new ColumnHeader();
+            ProductValue = new ColumnHeader();
+            Quantite = new ColumnHeader();
             InputProduct = new TextBox();
             InputDescription = new TextBox();
             InputValue = new TextBox();
-            Name = new Label();
+            labeProduct = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -43,11 +48,6 @@
             BtnClear = new Button();
             BtnSend = new Button();
             InputQuantite = new NumericUpDown();
-            Id = new ColumnHeader();
-            Description = new ColumnHeader();
-            ProductName = new ColumnHeader();
-            ProductValue = new ColumnHeader();
-            Quantite = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)InputQuantite).BeginInit();
             SuspendLayout();
             // 
@@ -61,6 +61,30 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
+            // 
+            // Id
+            // 
+            Id.Text = "ID";
+            // 
+            // Description
+            // 
+            Description.Text = "DESCRIPTION";
+            Description.Width = 250;
+            // 
+            // ProductName
+            // 
+            ProductName.Text = "PRODUCT";
+            ProductName.Width = 180;
+            // 
+            // ProductValue
+            // 
+            ProductValue.Text = "VALUE";
+            ProductValue.Width = 120;
+            // 
+            // Quantite
+            // 
+            Quantite.Text = "QUANTITE";
+            Quantite.Width = 100;
             // 
             // InputProduct
             // 
@@ -85,14 +109,14 @@
             InputValue.Size = new Size(211, 23);
             InputValue.TabIndex = 3;
             // 
-            // Name
+            // labeProduct
             // 
-            Name.AutoSize = true;
-            Name.Location = new Point(104, 209);
-            Name.Name = "Name";
-            Name.Size = new Size(49, 15);
-            Name.TabIndex = 5;
-            Name.Text = "Product";
+            labeProduct.AutoSize = true;
+            labeProduct.Location = new Point(104, 209);
+            labeProduct.Name = "labeProduct";
+            labeProduct.Size = new Size(49, 15);
+            labeProduct.TabIndex = 5;
+            labeProduct.Text = "Product";
             // 
             // label2
             // 
@@ -181,30 +205,6 @@
             InputQuantite.Size = new Size(211, 23);
             InputQuantite.TabIndex = 15;
             // 
-            // Id
-            // 
-            Id.Text = "ID";
-            // 
-            // Description
-            // 
-            Description.Text = "DESCRIPTION";
-            Description.Width = 250;
-            // 
-            // ProductName
-            // 
-            ProductName.Text = "PRODUCT";
-            ProductName.Width = 180;
-            // 
-            // ProductValue
-            // 
-            ProductValue.Text = "VALUE";
-            ProductValue.Width = 120;
-            // 
-            // Quantite
-            // 
-            Quantite.Text = "QUANTITE";
-            Quantite.Width = 100;
-            // 
             // UCProductManeger
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -219,7 +219,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(Name);
+            Controls.Add(labeProduct);
             Controls.Add(InputValue);
             Controls.Add(InputDescription);
             Controls.Add(InputProduct);
@@ -238,7 +238,7 @@
         private TextBox InputProduct;
         private TextBox InputDescription;
         private TextBox InputValue;
-        private Label Name;
+        private Label labeProduct;
         private Label label2;
         private Label label3;
         private Label label4;
