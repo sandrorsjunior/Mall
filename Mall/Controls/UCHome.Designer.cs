@@ -28,10 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Black", 35F);
+            label1.Location = new Point(50, 105);
+            label1.Name = "label1";
+            label1.Size = new Size(680, 67);
+            label1.TabIndex = 0;
+            label1.Text = "Welcome to Eletonic Mall";
+            label1.Click += label1_Click;
+            // 
+            // UCHome
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
+            Name = "UCHome";
+            Size = new Size(778, 393);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }

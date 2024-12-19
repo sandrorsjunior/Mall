@@ -28,18 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            TopMenuPanel = new Panel();
+            MainPanel = new Panel();
             SuspendLayout();
+            // 
+            // TopMenuPanel
+            // 
+            TopMenuPanel.BorderStyle = BorderStyle.FixedSingle;
+            TopMenuPanel.Location = new Point(3, 0);
+            TopMenuPanel.Name = "TopMenuPanel";
+            TopMenuPanel.Size = new Size(778, 58);
+            TopMenuPanel.TabIndex = 0;
+            // 
+            // MainPanel
+            // 
+            MainPanel.Location = new Point(3, 64);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new Size(778, 393);
+            MainPanel.TabIndex = 1;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 461);
+            Controls.Add(MainPanel);
+            Controls.Add(TopMenuPanel);
             Name = "MainForm";
             Text = "MainForm";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel TopMenuPanel;
+        private Panel MainPanel;
     }
 }

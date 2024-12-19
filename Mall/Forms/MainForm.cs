@@ -16,5 +16,10 @@ namespace Mall.Forms
         {
             InitializeComponent();
         }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
