@@ -20,9 +20,12 @@ namespace Mall.Forms
             MainPanel.Controls.Add(home);
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        private async void BtnLogin_Click(object sender, EventArgs e)
         {
             this.ChangeView(new UCLogin());
+            var api = new ApiConnection("https://jsonplaceholder.typicode.com/users");
+            string response = await api.GetUser();
+            
         }
 
         private void ChangeView(UserControl userControl)
