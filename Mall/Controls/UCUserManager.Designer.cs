@@ -36,7 +36,6 @@
             Role = new ColumnHeader();
             InputName = new TextBox();
             InputEmail = new TextBox();
-            InputBirthday = new TextBox();
             InputRole = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -48,6 +47,9 @@
             InputIdRemove = new TextBox();
             BtnClear = new Button();
             BtnSend = new Button();
+            label6 = new Label();
+            InputPassword = new TextBox();
+            IputTimePicker = new DateTimePicker();
             SuspendLayout();
             // 
             // LWUser
@@ -99,13 +101,6 @@
             InputEmail.Size = new Size(188, 23);
             InputEmail.TabIndex = 2;
             // 
-            // InputBirthday
-            // 
-            InputBirthday.Location = new Point(159, 283);
-            InputBirthday.Name = "InputBirthday";
-            InputBirthday.Size = new Size(188, 23);
-            InputBirthday.TabIndex = 3;
-            // 
             // InputRole
             // 
             InputRole.Location = new Point(159, 321);
@@ -151,9 +146,9 @@
             // 
             // BtnAdd
             // 
-            BtnAdd.Location = new Point(159, 358);
+            BtnAdd.Location = new Point(434, 266);
             BtnAdd.Name = "BtnAdd";
-            BtnAdd.Size = new Size(75, 23);
+            BtnAdd.Size = new Size(209, 23);
             BtnAdd.TabIndex = 9;
             BtnAdd.Text = "Add";
             BtnAdd.UseVisualStyleBackColor = true;
@@ -186,7 +181,7 @@
             // 
             // BtnClear
             // 
-            BtnClear.Location = new Point(434, 264);
+            BtnClear.Location = new Point(434, 307);
             BtnClear.Name = "BtnClear";
             BtnClear.Size = new Size(209, 23);
             BtnClear.TabIndex = 13;
@@ -195,17 +190,43 @@
             // 
             // BtnSend
             // 
-            BtnSend.Location = new Point(434, 306);
+            BtnSend.Location = new Point(434, 349);
             BtnSend.Name = "BtnSend";
             BtnSend.Size = new Size(209, 23);
             BtnSend.TabIndex = 14;
             BtnSend.Text = "Send";
             BtnSend.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(94, 360);
+            label6.Name = "label6";
+            label6.Size = new Size(57, 15);
+            label6.TabIndex = 15;
+            label6.Text = "Password";
+            // 
+            // InputPassword
+            // 
+            InputPassword.Location = new Point(159, 357);
+            InputPassword.Name = "InputPassword";
+            InputPassword.Size = new Size(188, 23);
+            InputPassword.TabIndex = 16;
+            // 
+            // IputTimePicker
+            // 
+            IputTimePicker.Location = new Point(159, 286);
+            IputTimePicker.Name = "IputTimePicker";
+            IputTimePicker.Size = new Size(188, 23);
+            IputTimePicker.TabIndex = 17;
+            // 
             // UCUserManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(IputTimePicker);
+            Controls.Add(InputPassword);
+            Controls.Add(label6);
             Controls.Add(BtnSend);
             Controls.Add(BtnClear);
             Controls.Add(InputIdRemove);
@@ -217,7 +238,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(InputRole);
-            Controls.Add(InputBirthday);
             Controls.Add(InputEmail);
             Controls.Add(InputName);
             Controls.Add(LWUser);
@@ -237,7 +257,6 @@
         private ColumnHeader Role;
         private TextBox InputName;
         private TextBox InputEmail;
-        private TextBox InputBirthday;
         private TextBox InputRole;
         private Label label1;
         private Label label2;
@@ -249,5 +268,8 @@
         private TextBox InputIdRemove;
         private Button BtnClear;
         private Button BtnSend;
+        private Label label6;
+        private TextBox InputPassword;
+        private DateTimePicker IputTimePicker;
     }
 }

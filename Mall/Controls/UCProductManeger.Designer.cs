@@ -94,7 +94,6 @@
             InputProduct.Name = "InputProduct";
             InputProduct.Size = new Size(211, 23);
             InputProduct.TabIndex = 1;
-            InputProduct.TextChanged += textBox1_TextChanged;
             // 
             // InputDescription
             // 
@@ -165,7 +164,6 @@
             label5.Size = new Size(18, 15);
             label5.TabIndex = 10;
             label5.Text = "ID";
-            label5.Click += label5_Click;
             // 
             // InputRemove
             // 
@@ -229,7 +227,6 @@
             Controls.Add(listView);
             Name = "UCProductManeger";
             Size = new Size(778, 393);
-            Load += UCProductManeger_Load;
             ((System.ComponentModel.ISupportInitialize)InputQuantite).EndInit();
             ResumeLayout(false);
             PerformLayout();
