@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            listView = new ListView();
             Id = new ColumnHeader();
             Description = new ColumnHeader();
             ProductName = new ColumnHeader();
@@ -51,16 +51,16 @@
             ((System.ComponentModel.ISupportInitialize)InputQuantite).BeginInit();
             SuspendLayout();
             // 
-            // listView1
+            // listView
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { Id, Description, ProductName, ProductValue, Quantite });
-            listView1.GridLines = true;
-            listView1.Location = new Point(27, 14);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(732, 187);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listView.Columns.AddRange(new ColumnHeader[] { Id, ProductName, Description, ProductValue, Quantite });
+            listView.GridLines = true;
+            listView.Location = new Point(27, 14);
+            listView.Name = "listView";
+            listView.Size = new Size(732, 187);
+            listView.TabIndex = 0;
+            listView.UseCompatibleStateImageBehavior = false;
+            listView.View = View.Details;
             // 
             // Id
             // 
@@ -68,11 +68,13 @@
             // 
             // Description
             // 
+            Description.DisplayIndex = 1;
             Description.Text = "DESCRIPTION";
             Description.Width = 250;
             // 
             // ProductName
             // 
+            ProductName.DisplayIndex = 2;
             ProductName.Text = "PRODUCT";
             ProductName.Width = 180;
             // 
@@ -153,6 +155,7 @@
             BtnAdd.TabIndex = 9;
             BtnAdd.Text = "Add";
             BtnAdd.UseVisualStyleBackColor = true;
+            BtnAdd.Click += BtnAdd_Click;
             // 
             // label5
             // 
@@ -223,7 +226,7 @@
             Controls.Add(InputValue);
             Controls.Add(InputDescription);
             Controls.Add(InputProduct);
-            Controls.Add(listView1);
+            Controls.Add(listView);
             Name = "UCProductManeger";
             Size = new Size(778, 393);
             Load += UCProductManeger_Load;
@@ -234,7 +237,7 @@
 
         #endregion
 
-        private ListView listView1;
+        private ListView listView;
         private TextBox InputProduct;
         private TextBox InputDescription;
         private TextBox InputValue;
