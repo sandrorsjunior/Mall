@@ -44,7 +44,7 @@
             BtnAdd = new Button();
             BtnRemove = new Button();
             label5 = new Label();
-            InputIdRemove = new TextBox();
+            InputRemove = new TextBox();
             BtnClear = new Button();
             BtnSend = new Button();
             label6 = new Label();
@@ -162,6 +162,7 @@
             BtnRemove.TabIndex = 10;
             BtnRemove.Text = "Remove";
             BtnRemove.UseVisualStyleBackColor = true;
+            BtnRemove.Click += BtnRemove_Click;
             // 
             // label5
             // 
@@ -172,12 +173,12 @@
             label5.TabIndex = 11;
             label5.Text = "ID";
             // 
-            // InputIdRemove
+            // InputRemove
             // 
-            InputIdRemove.Location = new Point(478, 206);
-            InputIdRemove.Name = "InputIdRemove";
-            InputIdRemove.Size = new Size(100, 23);
-            InputIdRemove.TabIndex = 12;
+            InputRemove.Location = new Point(478, 206);
+            InputRemove.Name = "InputRemove";
+            InputRemove.Size = new Size(100, 23);
+            InputRemove.TabIndex = 12;
             // 
             // BtnClear
             // 
@@ -212,6 +213,7 @@
             InputPassword.Name = "InputPassword";
             InputPassword.Size = new Size(188, 23);
             InputPassword.TabIndex = 16;
+            InputPassword.UseSystemPasswordChar = true;
             // 
             // IputTimePicker
             // 
@@ -229,7 +231,7 @@
             Controls.Add(label6);
             Controls.Add(BtnSend);
             Controls.Add(BtnClear);
-            Controls.Add(InputIdRemove);
+            Controls.Add(InputRemove);
             Controls.Add(label5);
             Controls.Add(BtnRemove);
             Controls.Add(BtnAdd);
@@ -265,7 +267,7 @@
         private Button BtnAdd;
         private Button BtnRemove;
         private Label label5;
-        private TextBox InputIdRemove;
+        private TextBox InputRemove;
         private Button BtnClear;
         private Button BtnSend;
         private Label label6;

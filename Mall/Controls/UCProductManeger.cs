@@ -48,20 +48,26 @@ namespace Mall.Controls
                 listView.Items.Add(item);
                 index_id++;
             }
-            
+
         }
 
-        private ProductModel factoryProductModel() 
+        private ProductModel factoryProductModel()
         {
             ProductModel productModel = new ProductModel();
             productModel.name = InputProduct.Text;
             productModel.value = float.Parse(InputValue.Text);
             productModel.description = InputDescription.Text;
-            productModel.quantite = (int) InputQuantite.Value;
+            productModel.quantite = (int)InputQuantite.Value;
             productModel.id = -1;
             return productModel;
         }
 
-
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            int inindexRemove = InputRemove.Text == "" ? newProducts.Count()-1 : int.Parse(InputRemove.Text);
+            newProducts.Remove(newProducts[inindexRemove]);
+            this.insertItemsInListView();
+            InputRemove.Clear();
+        }
     }
 }

@@ -30,8 +30,8 @@
         {
             listView = new ListView();
             Id = new ColumnHeader();
-            Description = new ColumnHeader();
             ProductName = new ColumnHeader();
+            Description = new ColumnHeader();
             ProductValue = new ColumnHeader();
             Quantite = new ColumnHeader();
             InputProduct = new TextBox();
@@ -66,17 +66,17 @@
             // 
             Id.Text = "ID";
             // 
-            // Description
-            // 
-            Description.DisplayIndex = 1;
-            Description.Text = "DESCRIPTION";
-            Description.Width = 250;
-            // 
             // ProductName
             // 
             ProductName.DisplayIndex = 2;
             ProductName.Text = "PRODUCT";
             ProductName.Width = 180;
+            // 
+            // Description
+            // 
+            Description.DisplayIndex = 1;
+            Description.Text = "DESCRIPTION";
+            Description.Width = 250;
             // 
             // ProductValue
             // 
@@ -180,6 +180,7 @@
             BtnRemove.TabIndex = 12;
             BtnRemove.Text = "Remove";
             BtnRemove.UseVisualStyleBackColor = true;
+            BtnRemove.Click += BtnRemove_Click;
             // 
             // BtnClear
             // 

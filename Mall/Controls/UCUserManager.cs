@@ -63,5 +63,13 @@ namespace Mall.Controls
             userModel.id = -1;
             return userModel;
         }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            int inindexRemove = InputRemove.Text == "" ? newUsers.Count() - 1 : int.Parse(InputRemove.Text);
+            newUsers.Remove(newUsers[inindexRemove]);
+            this.insertItemsInListView();
+            InputRemove.Clear();
+        }
     }
 }
