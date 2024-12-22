@@ -22,33 +22,33 @@ namespace Mall.Forms
 
         private async void BtnLogin_Click(object sender, EventArgs e)
         {
-            this.ChangeView(new UCLogin());
+            ChangeView(new UCLogin());
             var api = new ApiConnection("https://jsonplaceholder.typicode.com/users");
             string response = await api.GetUser();
             
         }
 
-        private void ChangeView(UserControl userControl)
+        public static void ChangeView(UserControl userControl)
         {
-            this.MainPanel.Controls.Clear();
+            MainForm.MainPanel.Controls.Clear();
             userControl.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Controls.Add(userControl);
+            MainForm.MainPanel.Controls.Add(userControl);
             userControl.BringToFront();
         }
 
         private void BtnUserManeger_Click(object sender, EventArgs e)
         {
-            this.ChangeView(new UCUserManager());
+            MainForm.ChangeView(new UCUserManager());
         }
 
         private void BtnProduct_Click(object sender, EventArgs e)
         {
-            this.ChangeView(new UCProductManeger());
+            MainForm.ChangeView(new UCProductManeger());
         }
 
         private void BtnStatus_Click(object sender, EventArgs e)
         {
-            this.ChangeView(new UCStatus());
+            MainForm.ChangeView(new UCStatus());
         }
     }
 }

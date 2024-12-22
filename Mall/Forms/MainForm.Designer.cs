@@ -112,7 +112,7 @@
         #endregion
 
         private Panel TopMenuPanel;
-        private Panel MainPanel;
+        private static Panel MainPanel;
         private Button BtnStatus;
         private Button BtnProduct;
         private Button BtnUserManeger;

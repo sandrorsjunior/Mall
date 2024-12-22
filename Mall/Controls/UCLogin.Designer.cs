@@ -64,12 +64,13 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(343, 262);
+            linkLabel1.Location = new Point(331, 262);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(60, 15);
+            linkLabel1.Size = new Size(86, 15);
             linkLabel1.TabIndex = 3;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "linkLabel1";
+            linkLabel1.Text = "Create Register";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // pictureBox1
             // 
