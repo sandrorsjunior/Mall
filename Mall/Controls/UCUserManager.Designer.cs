@@ -60,7 +60,6 @@
             LWUser.TabIndex = 0;
             LWUser.UseCompatibleStateImageBehavior = false;
             LWUser.View = View.Details;
-            LWUser.SelectedIndexChanged += LWUser_SelectedIndexChanged;
             // 
             // Id
             // 
@@ -158,6 +157,7 @@
             BtnAdd.TabIndex = 9;
             BtnAdd.Text = "Add";
             BtnAdd.UseVisualStyleBackColor = true;
+            BtnAdd.Click += BtnAdd_Click;
             // 
             // BtnRemove
             // 
@@ -167,7 +167,6 @@
             BtnRemove.TabIndex = 10;
             BtnRemove.Text = "Remove";
             BtnRemove.UseVisualStyleBackColor = true;
-            BtnRemove.Click += BtnRemove_Click;
             // 
             // label5
             // 
@@ -177,7 +176,6 @@
             label5.Size = new Size(18, 15);
             label5.TabIndex = 11;
             label5.Text = "ID";
-            label5.Click += label5_Click;
             // 
             // InputIdRemove
             // 

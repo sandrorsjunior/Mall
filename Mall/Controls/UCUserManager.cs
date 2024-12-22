@@ -17,17 +17,7 @@ namespace Mall.Controls
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnRemove_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LWUser_SelectedIndexChanged(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
 
         }
