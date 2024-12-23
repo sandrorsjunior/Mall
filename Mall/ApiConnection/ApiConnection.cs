@@ -1,68 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
+using Mall.ApiConnection.DTO;
 
-class ApiConnection
+namespace Mall.ApiConnection
 {
-    private string _url;
-    private string _responseMenssage;
-    private static HttpClient? _client;
-
-    public ApiConnection(string url)
+    class ApiConnection
     {
-        ApiConnection._client = null;
-        this._url = url;
-        this._responseMenssage = string.Empty;
-    }
+        private string _url;
+        private ResonseProductAPI? _responseMenssage;
+        private static HttpClient? _client;
 
-    private HttpClient GetClient()
-    {
-        if(ApiConnection._client == null)
+        public ApiConnection(string url)
         {
-            ApiConnection._client = new HttpClient();
+            ApiConnection._client = null;
+            this._url = url;
+            this._responseMenssage = null;
         }
-        return ApiConnection._client;
-    }
-    public async Task<string> GetUser()
-    {
-        var client = this.GetClient();
-        List<string> allUsers = new List<string>();
-        try
+
+        private HttpClient GetClient()
         {
-            HttpResponseMessage response = await client.GetAsync(this._url);
-            if (response.IsSuccessStatusCode)
+            if (ApiConnection._client == null)
             {
-                this._responseMenssage = await response.Content.ReadAsStringAsync();
-                List<ApiDTO> jsonResult = JsonSerializer.Deserialize<List<ApiDTO>>(this._responseMenssage);
-                if (jsonResult != null) 
+                ApiConnection._client = new HttpClient();
+            }
+            return ApiConnection._client;
+        }
+        public async Task<ResonseProductAPI>? executeURL(string endpoint)
+        {
+            string url = this._url + endpoint;
+            var client = this.GetClient();
+            List<string> allProducs = new List<string>();
+            try
+            {
+                HttpResponseMessage clientResponse = await client.GetAsync(url);
+                if (clientResponse.IsSuccessStatusCode)
                 {
-                    foreach (var data in jsonResult)
-                    {
-                        allUsers.Add(data.name);
-                    }
-                }
-                
-            }
-            else
-            {
-                Console.WriteLine($"Error: {response.StatusCode}");
-            }
-            MessageBox.Show(string.Join(",", allUsers));
-            return this._responseMenssage;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Exception occurred: {ex.Message}");
-            throw new Exception("Deu ruim negão!");
-        }
-        finally
-        {
-            client.Dispose();
-        }
+                    var response = await clientResponse.Content.ReadAsStringAsync();
+                    this._responseMenssage = JsonSerializer.Deserialize<ResonseProductAPI>(response);
 
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {clientResponse.StatusCode}");
+
+                    throw new Exception($"Error: {clientResponse.StatusCode}");
+                }
+                return this._responseMenssage;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception occurred: {ex.Message}");
+                throw new Exception("Deu ruim negão!");
+            }
+            finally
+            {
+                client.Dispose();
+            }
+
+        }
     }
+
 }

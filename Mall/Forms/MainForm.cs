@@ -20,12 +20,9 @@ namespace Mall.Forms
             MainPanel.Controls.Add(home);
         }
 
-        private async void BtnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             ChangeView(new UCLogin());
-            var api = new ApiConnection("https://jsonplaceholder.typicode.com/users");
-            string response = await api.GetUser();
-            
         }
 
         public static void ChangeView(UserControl userControl)
@@ -46,9 +43,11 @@ namespace Mall.Forms
             MainForm.ChangeView(new UCProductManeger());
         }
 
-        private void BtnStatus_Click(object sender, EventArgs e)
+        private async void BtnStatus_Click(object sender, EventArgs e)
         {
-            MainForm.ChangeView(new UCStatus());
+            var api = new ApiConnection.ApiConnection("http://localhost:5231/api/");
+            var response = await api.executeURL("Products");
+            MainForm.ChangeView(new UCStatus(response));
         }
     }
 }

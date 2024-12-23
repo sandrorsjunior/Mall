@@ -28,31 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
-            GPFilters = new GroupBox();
-            InputTextFilter = new TextBox();
-            RdStok = new RadioButton();
-            BtnSearch = new Button();
+            listViewStatus = new ListView();
             Id = new ColumnHeader();
-            ProductName = new ColumnHeader();
             Decription = new ColumnHeader();
-            Quantite = new ColumnHeader();
+            ProductName = new ColumnHeader();
             ProductValue = new ColumnHeader();
+            Quantite = new ColumnHeader();
             DateCreated = new ColumnHeader();
             ByUser = new ColumnHeader();
+            GPFilters = new GroupBox();
+            BtnSearch = new Button();
+            RdStok = new RadioButton();
+            InputTextFilter = new TextBox();
             GPFilters.SuspendLayout();
             SuspendLayout();
             // 
-            // listView1
+            // listViewStatus
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { Id, ProductName, Decription, ProductValue, Quantite, DateCreated, ByUser });
-            listView1.GridLines = true;
-            listView1.Location = new Point(36, 88);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(708, 289);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listViewStatus.Columns.AddRange(new ColumnHeader[] { Id, ProductName, Decription, ProductValue, Quantite, DateCreated, ByUser });
+            listViewStatus.GridLines = true;
+            listViewStatus.Location = new Point(36, 88);
+            listViewStatus.Name = "listViewStatus";
+            listViewStatus.Size = new Size(708, 289);
+            listViewStatus.TabIndex = 0;
+            listViewStatus.UseCompatibleStateImageBehavior = false;
+            listViewStatus.View = View.Details;
+            // 
+            // Id
+            // 
+            Id.Text = "ID";
+            // 
+            // Decription
+            // 
+            Decription.Text = "DESCRIPTION";
+            Decription.Width = 200;
+            // 
+            // ProductName
+            // 
+            ProductName.Text = "PRODUCT";
+            ProductName.Width = 120;
+            // 
+            // ProductValue
+            // 
+            ProductValue.Text = "Value";
+            ProductValue.Width = 80;
+            // 
+            // Quantite
+            // 
+            Quantite.Text = "QTD";
+            // 
+            // DateCreated
+            // 
+            DateCreated.Text = "Created";
+            DateCreated.Width = 120;
+            // 
+            // ByUser
+            // 
+            ByUser.Text = "BY";
+            ByUser.Width = 120;
             // 
             // GPFilters
             // 
@@ -66,12 +99,15 @@
             GPFilters.TabStop = false;
             GPFilters.Text = "Filters";
             // 
-            // InputTextFilter
+            // BtnSearch
             // 
-            InputTextFilter.Location = new Point(6, 33);
-            InputTextFilter.Name = "InputTextFilter";
-            InputTextFilter.Size = new Size(219, 23);
-            InputTextFilter.TabIndex = 0;
+            BtnSearch.Location = new Point(330, 14);
+            BtnSearch.Name = "BtnSearch";
+            BtnSearch.Size = new Size(75, 59);
+            BtnSearch.TabIndex = 2;
+            BtnSearch.Text = "Search";
+            BtnSearch.UseVisualStyleBackColor = true;
+            BtnSearch.Click += BtnSearch_Click;
             // 
             // RdStok
             // 
@@ -84,56 +120,19 @@
             RdStok.Text = "In Stok";
             RdStok.UseVisualStyleBackColor = true;
             // 
-            // BtnSearch
+            // InputTextFilter
             // 
-            BtnSearch.Location = new Point(330, 14);
-            BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(75, 59);
-            BtnSearch.TabIndex = 2;
-            BtnSearch.Text = "Search";
-            BtnSearch.UseVisualStyleBackColor = true;
-            // 
-            // Id
-            // 
-            Id.Text = "ID";
-            // 
-            // ProductName
-            // 
-            ProductName.Text = "PRODUCT";
-            ProductName.Width = 120;
-            // 
-            // Decription
-            // 
-            Decription.Text = "DESCRIPTION";
-            Decription.Width = 200;
-            // 
-            // Quantite
-            // 
-            Quantite.DisplayIndex = 3;
-            Quantite.Text = "QTD";
-            // 
-            // ProductValue
-            // 
-            ProductValue.DisplayIndex = 4;
-            ProductValue.Text = "Value";
-            ProductValue.Width = 80;
-            // 
-            // DateCreated
-            // 
-            DateCreated.Text = "Created";
-            DateCreated.Width = 120;
-            // 
-            // ByUser
-            // 
-            ByUser.Text = "BY";
-            ByUser.Width = 120;
+            InputTextFilter.Location = new Point(6, 33);
+            InputTextFilter.Name = "InputTextFilter";
+            InputTextFilter.Size = new Size(219, 23);
+            InputTextFilter.TabIndex = 0;
             // 
             // UCStatus
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(GPFilters);
-            Controls.Add(listView1);
+            Controls.Add(listViewStatus);
             Name = "UCStatus";
             Size = new Size(778, 393);
             GPFilters.ResumeLayout(false);
@@ -143,7 +142,7 @@
 
         #endregion
 
-        private ListView listView1;
+        private ListView listViewStatus;
         private GroupBox GPFilters;
         private RadioButton RdStok;
         private TextBox InputTextFilter;
