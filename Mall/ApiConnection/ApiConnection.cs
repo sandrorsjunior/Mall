@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.Net;
+using System.Text;
+using System.Text.Json;
 using Mall.ApiConnection.DTO;
 
 namespace Mall.ApiConnection
@@ -23,6 +25,27 @@ namespace Mall.ApiConnection
                 ApiConnection._client = new HttpClient();
             }
             return ApiConnection._client;
+        }
+
+        public async Task<HttpStatusCode> executePost(string endpoint, PostDTO<List<ProductDTO>> data)
+        {
+            string jsonData = JsonSerializer.Serialize(data);
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            string url = this._url + endpoint;
+            var client = this.GetClient();
+
+            HttpResponseMessage clientResponse = await client.PostAsync(url, content);
+
+            if (clientResponse.IsSuccessStatusCode)
+            {
+                return HttpStatusCode.OK;
+            }
+            else
+            {
+                return clientResponse.StatusCode;
+            }
+
+            client.Dispose();
         }
         public async Task<ResonseProductAPI>? executeURL(string endpoint)
         {
