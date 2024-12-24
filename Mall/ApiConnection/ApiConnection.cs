@@ -27,10 +27,11 @@ namespace Mall.ApiConnection
             return ApiConnection._client;
         }
 
-        public async Task<HttpStatusCode> executePost(string endpoint, PostDTO<List<ProductDTO>> data)
+        public async Task<HttpStatusCode> executePost(string endpoint, PostDTO<ProductDTO> data)
         {
-            string jsonData = JsonSerializer.Serialize(data);
+            string jsonData = JsonSerializer.Serialize(data.Content);
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var x = content.ToString();
             string url = this._url + endpoint;
             var client = this.GetClient();
 
@@ -38,7 +39,7 @@ namespace Mall.ApiConnection
 
             if (clientResponse.IsSuccessStatusCode)
             {
-                return HttpStatusCode.OK;
+                return clientResponse.StatusCode;
             }
             else
             {

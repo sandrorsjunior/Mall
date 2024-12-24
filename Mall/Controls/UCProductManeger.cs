@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mall.ApiConnection;
+using Mall.ApiConnection.DTO;
 using Mall.Models;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Mall.Controls
 {
@@ -64,10 +65,37 @@ namespace Mall.Controls
 
         private void BtnRemove_Click(object sender, EventArgs e)
         {
-            int inindexRemove = InputRemove.Text == "" ? newProducts.Count()-1 : int.Parse(InputRemove.Text);
+            int inindexRemove = InputRemove.Text == "" ? newProducts.Count() - 1 : int.Parse(InputRemove.Text);
             newProducts.Remove(newProducts[inindexRemove]);
             this.insertItemsInListView();
             InputRemove.Clear();
+        }
+
+        private void BtnSend_Click(object sender, EventArgs e)
+        {
+            List<ProductDTO> content = new List<ProductDTO>();
+
+            foreach (var item in newProducts)
+            {
+                var productDTO = new ProductDTO();
+
+                productDTO.id = int.Parse(item.SubItems[0].Text);
+                productDTO.description = item.SubItems[1].Text;
+                productDTO.name = item.SubItems[2].Text;
+                productDTO.value = float.Parse(item.SubItems[3].Text);
+                productDTO.qtd = int.Parse(item.SubItems[4].Text);
+                productDTO._dateCreation = DateTime.UtcNow;
+
+                content.Add(productDTO);
+                InputRemove.Clear();
+            }
+
+            var post = new PostDTO<ProductDTO>();
+            var api = new ApiConnection.ApiConnection("http://localhost:5231/api/");
+            post.Content = content[0];
+            var status = api.executePost("Products", post);
+            InputRemove.Clear();
+
         }
     }
 }
