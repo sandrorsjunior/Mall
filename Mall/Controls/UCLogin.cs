@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mall.ApiConnection.DTO;
 using Mall.Forms;
+using Mall.Utils.ConnectionApi;
 
 namespace Mall.Controls
 {
@@ -21,6 +23,20 @@ namespace Mall.Controls
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MainForm.ChangeView(new UCUserManager());
+        }
+
+        private async void BtnEnter_Click(object sender, EventArgs e)
+        {
+            Api api = new Api("http://localhost:5231/api/");
+            var content = new LoginDTO {
+                email = "root@root",
+                password = "admin_root"
+            };
+            var post = new PostDTO<LoginDTO> {
+                Content = content
+            };
+            var response = await api.Post<LoginDTO>("Users/login", post);
+            MessageBox.Show(response.Data.email);
         }
     }
 }

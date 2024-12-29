@@ -60,6 +60,7 @@
             BtnEnter.TabIndex = 2;
             BtnEnter.Text = "Enter";
             BtnEnter.UseVisualStyleBackColor = true;
+            BtnEnter.Click += BtnEnter_Click;
             // 
             // linkLabel1
             // 
