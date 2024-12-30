@@ -5,10 +5,8 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 namespace Mall.Utils.Encryption
 {
     class Encryption{
-        public string Senha { get; set; }
-        public byte[] Salt { get; set; }
 
-        public Byte[] GeraSalt(byte[] salt){
+        public static Byte[] GeraSalt(byte[] salt){
             using (var rng = RandomNumberGenerator.Create())
             {
                 rng.GetBytes(salt);
@@ -16,7 +14,7 @@ namespace Mall.Utils.Encryption
             return salt;
         }
 
-        public string CriptografarSenha(string senha, byte[] salt)
+        public static string CriptografarSenha(string senha, byte[] salt)
         {
             string senhaCriptografada = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: senha,
