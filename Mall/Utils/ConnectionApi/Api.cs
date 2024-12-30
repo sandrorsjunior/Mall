@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Security.Policy;
+﻿using System.Net;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using Mall.ApiConnection.DTO;
 using Mall.Utils.ConnectionApi.DTO;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Mall.Utils.ConnectionApi{
     class Api{

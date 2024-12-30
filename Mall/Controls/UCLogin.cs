@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Mall.ApiConnection.DTO;
+﻿using Mall.ApiConnection.DTO;
 using Mall.Forms;
 using Mall.Utils.ConnectionApi;
+using Mall.Utils.ConnectionApi.DTO;
 
 namespace Mall.Controls
 {
@@ -27,16 +19,24 @@ namespace Mall.Controls
 
         private async void BtnEnter_Click(object sender, EventArgs e)
         {
+            var HashCodeFromApi = this.GetHashSavedApi();
+        }
+
+        private async Task<ResponseMessageDTO<LoginDTO>> GetHashSavedApi() {
+
             Api api = new Api("http://localhost:5231/api/");
-            var content = new LoginDTO {
-                email = "root@root",
-                password = "admin_root"
+            var content = new LoginDTO
+            {
+                email = InputUser.Text,
+                password = InputPassWord.Text
             };
-            var post = new PostDTO<LoginDTO> {
+            var post = new PostDTO<LoginDTO>
+            {
                 Content = content
             };
             var response = await api.Post<LoginDTO>("Users/login", post);
-            MessageBox.Show(response.Data.email);
+
+            return response;
         }
     }
 }

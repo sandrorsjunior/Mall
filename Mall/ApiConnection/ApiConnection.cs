@@ -2,6 +2,7 @@
 using System.Text;
 using System.Text.Json;
 using Mall.ApiConnection.DTO;
+using Mall.Utils.ConnectionApi.DTO;
 
 namespace Mall.ApiConnection
 {

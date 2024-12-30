@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Mall.ApiConnection;
 using Mall.ApiConnection.DTO;
 using Mall.Models;
+using Mall.Utils.ConnectionApi.DTO;
 
 namespace Mall.Controls
 {
