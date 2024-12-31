@@ -43,6 +43,7 @@
             InputPassWord.PlaceholderText = "Insert The Pass Word";
             InputPassWord.Size = new Size(330, 23);
             InputPassWord.TabIndex = 0;
+            InputPassWord.UseSystemPasswordChar = true;
             // 
             // InputUser
             // 

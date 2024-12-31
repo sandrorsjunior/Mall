@@ -2,6 +2,7 @@
 using Mall.Forms;
 using Mall.Utils.ConnectionApi;
 using Mall.Utils.ConnectionApi.DTO;
+using Mall.Utils.Encryption;
 
 namespace Mall.Controls
 {
@@ -19,7 +20,17 @@ namespace Mall.Controls
 
         private async void BtnEnter_Click(object sender, EventArgs e)
         {
-            var HashCodeFromApi = this.GetHashSavedApi();
+            string msg;
+            var isLogin = await this.ComparePassword(InputPassWord.Text);
+            if (isLogin)
+            {
+                msg = "user into";
+            }
+            else 
+            {
+                msg = "user out";
+            }
+            MessageBox.Show(msg);
         }
 
         private async Task<ResponseMessageDTO<LoginDTO>> GetHashSavedApi() {
@@ -37,6 +48,24 @@ namespace Mall.Controls
             var response = await api.Post<LoginDTO>("Users/login", post);
 
             return response;
+        }
+
+        public async Task<bool> ComparePassword(string passwordRaw)
+        {
+            var HashCodeFromApi = await this.GetHashSavedApi();
+            var dataLogin = HashCodeFromApi.Data;
+
+            var passwordEncrypt = Encryption.CriptografarSenha(passwordRaw, dataLogin.salt);
+
+            if (passwordEncrypt == dataLogin.password)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+
         }
     }
 }
