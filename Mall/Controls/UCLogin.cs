@@ -8,9 +8,25 @@ namespace Mall.Controls
 {
     public partial class UCLogin : UserControl
     {
-        public UCLogin()
+        private Button _BtnStatus;
+        private Button _BtnProduct;
+        private Button _BtnUserManeger;
+        public UCLogin(Button BtnStatus, Button BtnProduct, Button BtnUserManeger)
         {
+            this._BtnStatus = BtnStatus;
+            this._BtnProduct = BtnProduct;
+            this._BtnUserManeger = BtnUserManeger;
             InitializeComponent();
+        }
+
+        public void ControlStateOfMenu(bool isLogin)
+        {
+            if (isLogin)
+            {
+                this._BtnStatus.Enabled = true;
+                this._BtnProduct.Enabled = true;
+                this._BtnUserManeger.Enabled = true;
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -21,9 +37,10 @@ namespace Mall.Controls
         private async void BtnEnter_Click(object sender, EventArgs e)
         {
             string msg;
-            var isLogin = await this.ComparePassword(InputPassWord.Text);
-            if (isLogin)
+            var Login = await this.ComparePassword(InputPassWord.Text);
+            if (Login != null)
             {
+                this.ControlStateOfMenu(true);
                 msg = "user into";
             }
             else 
@@ -32,6 +49,7 @@ namespace Mall.Controls
             }
             MessageBox.Show(msg);
         }
+
 
         private async Task<ResponseMessageDTO<LoginDTO>> GetHashSavedApi() {
 
@@ -50,7 +68,7 @@ namespace Mall.Controls
             return response;
         }
 
-        public async Task<bool> ComparePassword(string passwordRaw)
+        public async Task<LoginDTO>? ComparePassword(string passwordRaw)
         {
             var HashCodeFromApi = await this.GetHashSavedApi();
             var dataLogin = HashCodeFromApi.Data;
@@ -59,11 +77,11 @@ namespace Mall.Controls
 
             if (passwordEncrypt == dataLogin.password)
             {
-                return true;
+                return dataLogin;
             }
             else 
             {
-                return false;
+                return null;
             }
 
         }
