@@ -9,6 +9,7 @@ namespace Mall.ApiConnection.DTO
     public class ProductDTO
     {
         public long id { get; set; }
+        public int userId { get; set; }
         public string name { get; set; }
         public int qtd { get; set; }
         public float value { get; set; }

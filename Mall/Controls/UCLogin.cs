@@ -40,6 +40,7 @@ namespace Mall.Controls
             var Login = await this.ComparePassword(InputPassWord.Text);
             if (Login != null)
             {
+                MainForm.LoginDTO = Login;
                 this.ControlStateOfMenu(true);
                 msg = "user into";
             }

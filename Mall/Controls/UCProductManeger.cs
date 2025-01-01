@@ -17,8 +17,10 @@ namespace Mall.Controls
     public partial class UCProductManeger : UserControl
     {
         List<ListViewItem> newProducts = new List<ListViewItem>();
-        public UCProductManeger()
+        private LoginDTO _loginDTO;
+        public UCProductManeger(LoginDTO loginDTO)
         {
+            this._loginDTO = loginDTO;
             InitializeComponent();
         }
 
@@ -79,10 +81,10 @@ namespace Mall.Controls
             foreach (var item in newProducts)
             {
                 var productDTO = new ProductDTO();
-
+                productDTO.userId = this._loginDTO.userId;
                 productDTO.id = int.Parse(item.SubItems[0].Text);
-                productDTO.description = item.SubItems[1].Text;
-                productDTO.name = item.SubItems[2].Text;
+                productDTO.description = item.SubItems[2].Text; 
+                productDTO.name = item.SubItems[1].Text;
                 productDTO.value = float.Parse(item.SubItems[3].Text);
                 productDTO.qtd = int.Parse(item.SubItems[4].Text);
                 productDTO._dateCreation = DateTime.UtcNow;
@@ -96,6 +98,7 @@ namespace Mall.Controls
             post.Content = content[0];
             var status = api.executePost("Products", post);
             InputRemove.Clear();
+            listView.Items.Clear();
 
         }
     }

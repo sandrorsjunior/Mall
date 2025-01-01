@@ -7,6 +7,7 @@ namespace Mall.Forms
 {
     public partial class MainForm : Form
     {
+        public static LoginDTO LoginDTO { get; set; }
         public MainForm()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace Mall.Forms
 
         private void BtnProduct_Click(object sender, EventArgs e)
         {
-            MainForm.ChangeView(new UCProductManeger());
+            MainForm.ChangeView(new UCProductManeger(LoginDTO));
         }
 
         private async void BtnStatus_Click(object sender, EventArgs e)
