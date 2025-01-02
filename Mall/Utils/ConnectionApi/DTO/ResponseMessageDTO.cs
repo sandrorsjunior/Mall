@@ -3,7 +3,7 @@
 
 namespace Mall.Utils.ConnectionApi.DTO
 {
-    class ResponseMessageDTO <T>
+    public class ResponseMessageDTO <T>
     {
         public T? Data { get; set; }
         public HttpStatusCode StatusCode { get; set; }

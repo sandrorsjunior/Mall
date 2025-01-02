@@ -1,7 +1,10 @@
 ﻿
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Mall.ApiConnection.DTO;
 using Mall.Controls;
+using Mall.Utils.ConnectionApi;
+using Mall.Utils.ConnectionApi.DTO;
 
 namespace Mall.Forms
 {
@@ -48,8 +51,8 @@ namespace Mall.Forms
 
         private async void BtnStatus_Click(object sender, EventArgs e)
         {
-            var api = new ApiConnection.ApiConnection("http://localhost:5231/api/");
-            var response = await api.executeURL("Products");
+            var api = new Api("http://localhost:5231/api/");
+            var response = await api.Get<List<ProductSatusDTO>> ("Products");
             MainForm.ChangeView(new UCStatus(response));
         }
     }
