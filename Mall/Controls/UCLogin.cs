@@ -1,5 +1,4 @@
-﻿using Mall.ApiConnection.DTO;
-using Mall.Forms;
+﻿using Mall.Forms;
 using Mall.Utils.ConnectionApi;
 using Mall.Utils.ConnectionApi.DTO;
 using Mall.Utils.Encryption;

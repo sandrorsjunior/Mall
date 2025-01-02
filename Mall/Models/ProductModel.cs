@@ -1,7 +1,4 @@
-﻿using System;
-using System.Reflection;
-
-
+﻿
 namespace Mall.Models
 {
     class ProductModel

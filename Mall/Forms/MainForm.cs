@@ -1,8 +1,4 @@
-﻿
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Mall.ApiConnection.DTO;
-using Mall.Controls;
+﻿using Mall.Controls;
 using Mall.Utils.ConnectionApi;
 using Mall.Utils.ConnectionApi.DTO;
 

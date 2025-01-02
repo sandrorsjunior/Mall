@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mall.ApiConnection.DTO
+namespace Mall.Utils.ConnectionApi.DTO
 {
     class UserCreationDTO
     {

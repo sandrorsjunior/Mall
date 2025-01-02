@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mall.ApiConnection.DTO
+namespace Mall.Utils.ConnectionApi.DTO
 {
     public class ProductDTO
     {
@@ -17,7 +17,7 @@ namespace Mall.ApiConnection.DTO
         public DateTime _dateCreation { get; set; }
     }
 
-    public class ResonseProductAPI 
+    public class ResonseProductAPI
     {
         public List<ProductDTO> data { get; set; }
         public bool status { get; set; }

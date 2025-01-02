@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Mall.ApiConnection;
-using Mall.ApiConnection.DTO;
-using Mall.Models;
+﻿using Mall.Models;
+using Mall.Utils.ConnectionApi;
 using Mall.Utils.ConnectionApi.DTO;
 
 namespace Mall.Controls
@@ -74,7 +64,7 @@ namespace Mall.Controls
             InputRemove.Clear();
         }
 
-        private void BtnSend_Click(object sender, EventArgs e)
+        private async void BtnSend_Click(object sender, EventArgs e)
         {
             List<ProductDTO> content = new List<ProductDTO>();
 
@@ -94,9 +84,9 @@ namespace Mall.Controls
             }
 
             var post = new PostDTO<ProductDTO>();
-            var api = new ApiConnection.ApiConnection("http://localhost:5231/api/");
+            Api api = new Api("http://localhost:5231/api/");
             post.Content = content[0];
-            var status = api.executePost("Products", post);
+            var response = await api.Post<ProductDTO>("Products", post);
             InputRemove.Clear();
             listView.Items.Clear();
 

@@ -1,4 +1,4 @@
-﻿namespace Mall.ApiConnection.DTO
+﻿namespace Mall.Utils.ConnectionApi.DTO
 {
     public class LoginDTO
     {
@@ -7,9 +7,10 @@
         public string password { get; set; }
         public byte[] salt { get; set; }
 
-        public override string ToString(){
+        public override string ToString()
+        {
             {
-                return $"Email: {this.email}";
+                return $"Email: {email}";
             }
         }
     }

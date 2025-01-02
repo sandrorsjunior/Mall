@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using Mall.ApiConnection.DTO;
-using Mall.Models;
+﻿using Mall.Models;
 using Mall.Utils;
 using Mall.Utils.ConnectionApi.DTO;
 using Mall.Utils.ConnectionApi;
