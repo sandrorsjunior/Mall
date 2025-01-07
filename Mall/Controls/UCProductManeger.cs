@@ -73,7 +73,7 @@ namespace Mall.Controls
                 var productDTO = new ProductDTO();
                 productDTO.userId = this._loginDTO.userId;
                 productDTO.id = int.Parse(item.SubItems[0].Text);
-                productDTO.description = item.SubItems[2].Text; 
+                productDTO.description = item.SubItems[2].Text;
                 productDTO.name = item.SubItems[1].Text;
                 productDTO.value = float.Parse(item.SubItems[3].Text);
                 productDTO.qtd = int.Parse(item.SubItems[4].Text);
@@ -89,7 +89,14 @@ namespace Mall.Controls
             var response = await api.Post<ProductDTO>("Products", post);
             InputRemove.Clear();
             listView.Items.Clear();
+            this.newProducts = new List<ListViewItem>();
 
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            this.newProducts = new List<ListViewItem>();
+            listView.Items.Clear();
         }
     }
 }

@@ -76,7 +76,8 @@ namespace Mall.Controls
                 byte[] saltArr = new byte[128 / 8];
                 var salt = Encryption.GeraSalt(saltArr);
 
-                var newUser = new UserCreationDTO {
+                var newUser = new UserCreationDTO
+                {
                     Name = userItem.SubItems[1].Text,
                     Email = userItem.SubItems[2].Text,
                     Birthday = DateTime.Parse(userItem.SubItems[3].Text).ToUniversalTime(),
@@ -92,12 +93,13 @@ namespace Mall.Controls
                 try
                 {
                     var response = await api.Post<UserCreationDTO>("Users/creatUser", post);
-                    if (response.StatusCode != System.Net.HttpStatusCode.OK) 
+                    if (response.StatusCode != System.Net.HttpStatusCode.OK)
                     {
                         UsersNotSend.Add(newUser.Email);
                     }
+                    this.newUsers = new List<ListViewItem>();
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     Console.WriteLine($"Some problem there was when the program tried register the user: {newUser.Email}");
                 }
@@ -113,6 +115,12 @@ namespace Mall.Controls
                 MessageBox.Show(string.Join("\n", UsersNotSend));
             }
 
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            newUsers = new List<ListViewItem>();
+            LWUser.Items.Clear();
         }
     }
 }
